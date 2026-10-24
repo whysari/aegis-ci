@@ -1,0 +1,57 @@
+services:
+  aegis-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8010:8010"
+    environment:
+      - AEGIS_DB_PATH=/data/aegis.db
+      - POSTGRES_DSN=postgresql://aegis:aegis@postgres:5432/aegis
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - aegis-net
+
+  aegis-web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3010:3010"
+    environment:
+      - NEXT_PUBLIC_AEGIS_API_URL=http://localhost:8010
+    depends_on:
+      - aegis-api
+    networks:
+      - aegis-net
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=aegis
+      - POSTGRES_PASSWORD=aegis
+      - POSTGRES_DB=aegis
+    volumes:
+      - ./deploy/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aegis"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - aegis-net
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./deploy/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - aegis-net
+
+networks:
+  aegis-net:
+    driver: bridge
