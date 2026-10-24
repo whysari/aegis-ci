@@ -28,7 +28,7 @@ services:
       - aegis-net
 
   postgres:
-    image: postgres:16-alpine
+    image: postgres:18-alpine
     environment:
       - POSTGRES_USER=aegis
       - POSTGRES_PASSWORD=aegis
@@ -44,7 +44,7 @@ services:
       - aegis-net
 
   prometheus:
-    image: prom/prometheus:v2.54.1
+    image: prom/prometheus:v3.10.0
     ports:
       - "9091:9090"
     volumes:

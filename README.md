@@ -1,8 +1,8 @@
 # Aegis-CI: Multi-Agent Worktree Release Gate, Red-to-Green Test Verifier & PostgreSQL Lock Analyzer
 
 [![CI & Zero-Rollback Benchmark](https://github.com/whysari/aegis-ci/actions/workflows/ci.yml/badge.svg)](https://github.com/whysari/aegis-ci/actions/workflows/ci.yml)
-[![Python 3.11+](https://img.shields.io/badge/Python-3.11+-blue?logo=python)](https://www.python.org/)
-[![Next.js 15](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![Python 3.13+](https://img.shields.io/badge/Python-3.13+-blue?logo=python)](https://www.python.org/)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.4-black?logo=next.js)](https://nextjs.org/)
 [![Zero Rollbacks](https://img.shields.io/badge/Release%20Gate-0%20Rollbacks%20Verified-brightgreen)](#empirical-benchmark-30-multi-agent-pr-candidates)
 
 **Aegis-CI** is an autonomous multi-agent software delivery coordinator and deterministic release-gate engine inspired by high-velocity production engineering workflows (**228 PRs merged with zero rollbacks across 4 parallel Claude Code agents**). It orchestrates parallel coding agents in isolated `git worktree` branches and enforces a strict **5-Stage Release Gate** before any agent patch can reach human sign-off or production deployment.
