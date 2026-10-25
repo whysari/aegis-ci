@@ -1,10 +1,13 @@
 # Aegis-CI: Multi-Agent Worktree Release Gate, Red-to-Green Test Verifier & PostgreSQL 18 Lock Analyzer
 
+[![Live Interactive Console](https://img.shields.io/badge/Live_Console-aegis--ci.vercel.app-10b981?logo=vercel)](https://aegis-ci.vercel.app)
 [![CI & Zero-Rollback Benchmark](https://github.com/whysari/aegis-ci/actions/workflows/ci.yml/badge.svg)](https://github.com/whysari/aegis-ci/actions/workflows/ci.yml)
 [![Python 3.13+](https://img.shields.io/badge/Python-3.13+-blue?logo=python)](https://www.python.org/)
 [![Next.js 16.4](https://img.shields.io/badge/Next.js-16.4_App_Router-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript 7](https://img.shields.io/badge/TypeScript-7.0_Strict-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Zero Rollbacks](https://img.shields.io/badge/Release%20Gate-0%20Rollbacks%20Verified-brightgreen)](#empirical-benchmark-30-multi-agent-pr-candidates)
+
+> **Live Interactive Release Gate Console:** **[https://aegis-ci.vercel.app](https://aegis-ci.vercel.app)** *(5-stage pipeline visualizer, 7 preset defect scenarios, PostgreSQL 18 DDL lock analyzer with Expand/Contract rewrites, Python AST security auditor, and 30-PR benchmark matrix)*
 
 **Aegis-CI** is an autonomous multi-agent software delivery coordinator, static security gate, and zero-downtime PostgreSQL 18 migration lock analyzer inspired by high-velocity production compliance engineering (**228 pull requests merged with zero rollbacks across 4 parallel Claude Code agents**). It orchestrates parallel coding agents in isolated `git worktree` branches and enforces a deterministic **5-Stage Release Gate** before any patch reaches human sign-off or production deployment.
 
