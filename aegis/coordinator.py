@@ -17,7 +17,7 @@ class AegisCoordinator:
     """
     Multi-Agent Git-Worktree Release Gate Coordinator:
     Directs up to 4 parallel coding agents and enforces a 5-stage deterministic release gate:
-      Stage 1: Test-to-Code Ratio Enforcement (default >= 1.0, eVAT standard 2:1)
+      Stage 1: Test-to-Code Ratio Enforcement (default >= 1.0, strict standard 2:1)
       Stage 2: Strict Red-to-Green Defect Reproduction Gate (must fail on base, pass on head)
       Stage 3: Python AST Security & Reliability Gate (no SQLi, secrets, eval, swallowed exceptions, mutable defaults)
       Stage 4: PostgreSQL Zero-Downtime DDL Lock Analyzer (no unguarded ACCESS EXCLUSIVE / SHARE locks)

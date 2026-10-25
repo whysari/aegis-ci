@@ -519,7 +519,7 @@ export default function ReleaseGateConsole() {
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-xs font-bold uppercase tracking-[0.14em] text-slate-300 flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              Isolated Git-Worktree Coding Agent Streams (eVAT Architecture: 228 PRs · 0 Rollbacks)
+              Isolated Git-Worktree Coding Agent Streams (4 Parallel Worktrees · 30-PR Benchmark)
             </h2>
             <span className="font-mono text-[10px] text-slate-400">ThreadPoolExecutor(max_workers=4)</span>
           </div>

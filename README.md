@@ -9,7 +9,7 @@
 
 > **Live Interactive Release Gate Console:** **[https://aegis-ci.vercel.app](https://aegis-ci.vercel.app)** *(5-stage pipeline visualizer, 7 preset defect scenarios, PostgreSQL 18 DDL lock analyzer with Expand/Contract rewrites, Python AST security auditor, and 30-PR benchmark matrix)*
 
-**Aegis-CI** is an autonomous multi-agent software delivery coordinator, static security gate, and zero-downtime PostgreSQL 18 migration lock analyzer inspired by high-velocity production compliance engineering (**228 pull requests merged with zero rollbacks across 4 parallel Claude Code agents**). It orchestrates parallel coding agents in isolated `git worktree` branches and enforces a deterministic **5-Stage Release Gate** before any patch reaches human sign-off or production deployment.
+**Aegis-CI** is an autonomous multi-agent software delivery coordinator, static AST security gate, and zero-downtime PostgreSQL 18 migration lock analyzer. It orchestrates parallel coding agents in isolated `git worktree` branches and enforces a deterministic **5-Stage Release Gate** before any patch reaches human sign-off or production deployment.
 
 ---
 
