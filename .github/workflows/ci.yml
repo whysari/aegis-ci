@@ -8,14 +8,30 @@ on:
 
 jobs:
   verify-release-gate:
-    name: Unit Tests & 30-PR Zero-Rollback Benchmark
+    name: Python 3.13 Release Gate, 30-PR Benchmark & Next.js 16.4 Frontend
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-      - name: Run Unit Tests
+          python-version: "3.13"
+
+      - name: Set up Bun Runtime
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Run Python Release Gate & API Test Suite (13 tests)
         run: python3 -m unittest discover -s tests -v
-      - name: Run 30-PR Multi-Agent Release Gate Benchmark
+
+      - name: Execute 30-PR Multi-Agent Zero-Rollback Benchmark
         run: python3 benchmarks/run_aegis_benchmark.py
+
+      - name: Install Frontend Dependencies & Run Contract Test Suite (11 tests)
+        working-directory: frontend
+        run: |
+          bun install
+          bun test
+          bun run build
